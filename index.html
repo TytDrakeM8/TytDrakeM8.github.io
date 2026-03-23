@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TytDrakeM8 | Gamer • Veteran • Streamer</title>
+  <meta
+    name="description"
+    content="Official page for TytDrakeM8 — gamer, streamer, Army veteran, and fitness-focused creator."
+  />
+  <style>
+    :root{
+      --bg-deep:#031522;
+      --bg-mid:#07273c;
+      --bg-light:#0c4b6e;
+      --panel:rgba(6, 23, 36, 0.68);
+      --panel-border:rgba(122, 223, 255, 0.22);
+      --text:#eefcff;
+      --muted:#b7d9e6;
+      --accent:#7de7ff;
+      --accent-2:#52b6ff;
+      --accent-3:#b8f7ff;
+      --shadow:0 18px 45px rgba(0,0,0,.35);
+      --radius:24px;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(125,231,255,.18), transparent 18%),
+        radial-gradient(circle at 80% 15%, rgba(82,182,255,.18), transparent 22%),
+        linear-gradient(180deg, #02111c 0%, #05243a 38%, #0a4d73 100%);
+      overflow-x:hidden;
+      min-height:100vh;
+      position:relative;
+    }
+
+    /* Floating ocean glow */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:-20%;
+      background:
+        radial-gradient(circle, rgba(125,231,255,.10) 0%, transparent 45%),
+        radial-gradient(circle, rgba(82,182,255,.08) 0%, transparent 40%);
+      animation: driftGlow 16s ease-in-out infinite alternate;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    @keyframes driftGlow{
+      0%{ transform:translate(-2%, -1%) scale(1); }
+      100%{ transform:translate(2%, 2%) scale(1.08); }
+    }
+
+    .waves{
+      position:fixed;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .wave{
+      position:absolute;
+      left:-10%;
+      width:120%;
+      height:220px;
+      background:rgba(255,255,255,0.08);
+      border-radius:45%;
+      filter:blur(2px);
+      opacity:.28;
+    }
+
+    .wave1{
+      bottom:110px;
+      animation: waveMove1 12s linear infinite;
+      background:linear-gradient(180deg, rgba(125,231,255,.16), rgba(125,231,255,.04));
+    }
+
+    .wave2{
+      bottom:40px;
+      animation: waveMove2 15s linear infinite;
+      background:linear-gradient(180deg, rgba(82,182,255,.18), rgba(82,182,255,.06));
+      opacity:.24;
+    }
+
+    .wave3{
+      bottom:-30px;
+      animation: waveMove1 18s linear infinite reverse;
+      background:linear-gradient(180deg, rgba(184,247,255,.12), rgba(184,247,255,.05));
+      opacity:.22;
+    }
+
+    @keyframes waveMove1{
+      0%{ transform:translateX(0) translateY(0) rotate(0deg); }
+      50%{ transform:translateX(-4%) translateY(10px) rotate(1deg); }
+      100%{ transform:translateX(0) translateY(0) rotate(0deg); }
+    }
+
+    @keyframes waveMove2{
+      0%{ transform:translateX(0) translateY(0) rotate(0deg); }
+      50%{ transform:translateX(4%) translateY(-10px) rotate(-1deg); }
+      100%{ transform:translateX(0) translateY(0) rotate(0deg); }
+    }
+
+    .bubbles{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      overflow:hidden;
+    }
+
+    .bubble{
+      position:absolute;
+      bottom:-80px;
+      border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(125,231,255,.08));
+      border:1px solid rgba(255,255,255,.12);
+      animation: floatUp linear infinite;
+      opacity:.5;
+    }
+
+    .bubble:nth-child(1){ left:8%; width:18px; height:18px; animation-duration:11s; animation-delay:0s; }
+    .bubble:nth-child(2){ left:18%; width:10px; height:10px; animation-duration:15s; animation-delay:2s; }
+    .bubble:nth-child(3){ left:33%; width:24px; height:24px; animation-duration:14s; animation-delay:1s; }
+    .bubble:nth-child(4){ left:48%; width:14px; height:14px; animation-duration:10s; animation-delay:4s; }
+    .bubble:nth-child(5){ left:61%; width:20px; height:20px; animation-duration:16s; animation-delay:3s; }
+    .bubble:nth-child(6){ left:74%; width:12px; height:12px; animation-duration:12s; animation-delay:5s; }
+    .bubble:nth-child(7){ left:88%; width:22px; height:22px; animation-duration:17s; animation-delay:1s; }
+
+    @keyframes floatUp{
+      0%{ transform:translateY(0) scale(1); opacity:0; }
+      10%{ opacity:.45; }
+      100%{ transform:translateY(-115vh) scale(1.2); opacity:0; }
+    }
+
+    .container{
+      width:min(1160px, calc(100% - 28px));
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter:blur(12px);
+      background:rgba(2,16,27,.45);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.4px;
+    }
+
+    .logo-box{
+      width:50px;
+      height:50px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(145deg, rgba(125,231,255,.18), rgba(82,182,255,.15));
+      border:1px solid rgba(125,231,255,.28);
+      box-shadow:0 0 24px rgba(125,231,255,.16);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{ color:var(--text); }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.2fr .85fr;
+      gap:22px;
+      padding:72px 0 26px;
+      align-items:center;
+    }
+
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--panel-border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+    }
+
+    .hero-main{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-main::after{
+      content:"";
+      position:absolute;
+      inset:auto -80px -80px auto;
+      width:260px;
+      height:260px;
+      background:radial-gradient(circle, rgba(125,231,255,.18), transparent 65%);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:var(--accent);
+      font-weight:800;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2.4rem, 5vw, 4.8rem);
+      line-height:.95;
+      letter-spacing:-1.7px;
+    }
+
+    .gradient{
+      background:linear-gradient(90deg, #ffffff 0%, #9ceeff 45%, #5db9ff 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero-main p{
+      margin:0;
+      color:var(--muted);
+      font-size:1.06rem;
+      line-height:1.75;
+      max-width:60ch;
+    }
+
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:900;
+      padding:14px 18px;
+      border-radius:16px;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .btn:hover{ transform:translateY(-2px); }
+
+    .btn-primary{
+      color:#052031;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 12px 26px rgba(82,182,255,.26);
+    }
+
+    .btn-secondary{
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.04);
+    }
+
+    .tag-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .tag{
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:.92rem;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.04);
+      color:#dcf8ff;
+    }
+
+    .hero-side{
+      padding:22px;
+      display:grid;
+      gap:14px;
+    }
+
+    .stat{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .icon{
+      width:44px;
+      height:44px;
+      flex-shrink:0;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(145deg, rgba(125,231,255,.18), rgba(82,182,255,.16));
+      border:1px solid rgba(125,231,255,.25);
+      font-size:1.15rem;
+      font-weight:900;
+      color:var(--accent);
+    }
+
+    .stat h3{
+      margin:0 0 6px;
+      font-size:1rem;
+    }
+
+    .stat p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:.96rem;
+    }
+
+    section{ padding:18px 0 26px; }
+
+    .section-title{
+      margin:0 0 10px;
+      font-size:1.8rem;
+      letter-spacing:-.6px;
+    }
+
+    .section-sub{
+      color:var(--muted);
+      margin:0 0 20px;
+      line-height:1.75;
+      max-width:72ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      padding:24px;
+      border-radius:var(--radius);
+      background:var(--panel);
+      border:1px solid var(--panel-border);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.72;
+    }
+
+    .mission{
+      padding:28px;
+      border-radius:var(--radius);
+      background:
+        linear-gradient(135deg, rgba(125,231,255,.14), rgba(82,182,255,.10)),
+        rgba(255,255,255,.04);
+      border:1px solid rgba(125,231,255,.22);
+      box-shadow:var(--shadow);
+    }
+
+    .mission h3{
+      margin:0 0 10px;
+      font-size:1.25rem;
+    }
+
+    .mission p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .links{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .link-card{
+      text-decoration:none;
+      color:inherit;
+      padding:24px;
+      border-radius:22px;
+      background:var(--panel);
+      border:1px solid var(--panel-border);
+      box-shadow:var(--shadow);
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      display:block;
+    }
+
+    .link-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(125,231,255,.35);
+      box-shadow:0 18px 45px rgba(0,0,0,.42), 0 0 20px rgba(125,231,255,.08);
+    }
+
+    .label{
+      color:var(--accent);
+      font-weight:900;
+      font-size:.84rem;
+      text-transform:uppercase;
+      letter-spacing:.9px;
+      margin-bottom:8px;
+    }
+
+    .link-card h3{
+      margin:0 0 8px;
+      font-size:1.18rem;
+    }
+
+    .link-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .featured{
+      border:1px solid rgba(125,231,255,.34);
+      background:
+        linear-gradient(135deg, rgba(125,231,255,.14), rgba(82,182,255,.10)),
+        rgba(6, 23, 36, 0.72);
+    }
+
+    footer{
+      padding:20px 0 44px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    @media (max-width: 980px){
+      .hero,
+      .grid-3,
+      .grid-2,
+      .links{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero{ padding-top:42px; }
+      .hero-main, .hero-side, .card, .link-card, .mission{ padding:20px; }
+      h1{ font-size:2.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="waves">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </div>
+
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo-box" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 20H44M26 20V90" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/>
+            <path d="M60 18V42" stroke="url(#g1)" stroke-width="8" stroke-linecap="round"/>
+            <path d="M60 18L47 39" stroke="url(#g1)" stroke-width="8" stroke-linecap="round"/>
+            <path d="M60 18L73 39" stroke="url(#g1)" stroke-width="8" stroke-linecap="round"/>
+            <path d="M60 42V92" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/>
+            <path d="M52 92H68" stroke="url(#g1)" stroke-width="8" stroke-linecap="round"/>
+            <path d="M78 20H112M95 20V90" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="g1" x1="6" y1="10" x2="110" y2="100" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#B8F7FF"/>
+                <stop offset="0.5" stop-color="#7DE7FF"/>
+                <stop offset="1" stop-color="#52B6FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span>TYTDrakeM8</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#mission">Mission</a>
+        <a href="#links">Links</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="panel hero-main">
+        <div class="eyebrow">🌊 Gamer • Army Veteran • Fitness • Streaming Grind</div>
+        <h1>I’m <span class="gradient">TytDrakeM8</span></h1>
+        <p>
+          I’m building a brand around gaming, streaming, discipline, and self-improvement.
+          As an Army veteran, I bring focus, toughness, and consistency into everything I do.
+          My mission is to grow TytDrakeM8 into a real community and stream full time.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://www.twitch.tv/tytdrakem8" target="_blank" rel="noopener noreferrer">
+            Watch on Twitch
+          </a>
+          <a class="btn btn-secondary" href="#mission">See My Mission</a>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">Twitch Creator</span>
+          <span class="tag">Gaming Content</span>
+          <span class="tag">Army Veteran</span>
+          <span class="tag">Fitness Driven</span>
+          <span class="tag">Future Full-Time Streamer</span>
+        </div>
+      </div>
+
+      <div class="panel hero-side">
+        <div class="stat">
+          <div class="icon">🎮</div>
+          <div>
+            <h3>Gaming & Streaming</h3>
+            <p>I’m building TytDrakeM8 into a real streaming brand with long-term creator goals.</p>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="icon">🇺🇸</div>
+          <div>
+            <h3>Army Veteran</h3>
+            <p>My veteran background shaped my discipline, mindset, and ability to stay mission-focused.</p>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="icon">💪</div>
+          <div>
+            <h3>Fitness Mindset</h3>
+            <p>Training and working out are part of who I am and help sharpen my focus on and off stream.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-sub">
+        TytDrakeM8 is more than a gamer tag. It’s the brand I’m building around gaming,
+        streaming, discipline, and leveling up in every area of life.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Who I Am</h3>
+          <p>
+            I’m a gamer, streamer, Army veteran, and somebody who believes in self-improvement.
+            I want my content to reflect strength, consistency, and real ambition. Whether it’s in
+            gaming or the gym, I’m always trying to push further.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>The TYT Brand</h3>
+          <p>
+            The TYT part of my brand is designed to stand out, with the Y represented as a trident.
+            It gives the logo a stronger identity and fits the bold, wave-themed look of the page.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <h2 class="section-title">What I’m Focused On</h2>
+      <p class="section-sub">
+        My goal is to build a future where I can stream full time and grow a loyal community
+        around gaming, motivation, and discipline.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Streaming Growth</h3>
+          <p>
+            I’m focused on growing my Twitch presence, building consistency, and turning
+            TytDrakeM8 into a brand people recognize and support.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Veteran Discipline</h3>
+          <p>
+            My Army background gave me the mindset to stay committed, work through pressure,
+            and keep showing up even when growth takes time.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Fitness & Performance</h3>
+          <p>
+            Fitness is part of my lifestyle. Working out keeps me sharp, confident, and mentally
+            ready for my goals both online and offline.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission">
+      <h2 class="section-title">Mission</h2>
+      <div class="mission">
+        <h3>My Goal: Stream Full Time</h3>
+        <p>
+          I’m building TytDrakeM8 into something bigger than just a page or a username.
+          I want this to become a real brand built on gaming, streaming, fitness, and the mindset
+          that comes from discipline and growth. This is the beginning of that journey.
+        </p>
+      </div>
+    </section>
+
+    <section id="links">
+      <h2 class="section-title">Connect With Me</h2>
+      <p class="section-sub">
+        Your Twitch is linked below like a real website button. You can add your other platforms the same way.
+      </p>
+
+      <div class="links">
+        <a class="link-card featured" href="https://www.twitch.tv/tytdrakem8" target="_blank" rel="noopener noreferrer">
+          <div class="label">Live Streaming</div>
+          <h3>Twitch — TytDrakeM8</h3>
+          <p>Click here to go directly to my Twitch channel and follow the journey live.</p>
+        </a>
+
+        <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
+          <div class="label">Content</div>
+          <h3>YouTube</h3>
+          <p>Add your YouTube link here for clips, VODs, highlights, and future content.</p>
+        </a>
+
+        <a class="link-card" href="#" target="_blank" rel="noopener noreferrer">
+          <div class="label">Social</div>
+          <h3>TikTok / Instagram / X</h3>
+          <p>Add your socials here so people can keep up with your content and brand.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 TytDrakeM8 • Built with a wave theme 🌊
+    </div>
+  </footer>
+</body>
+</html>
